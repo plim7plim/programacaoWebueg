@@ -1,0 +1,15 @@
+body{
+    font-family: Arial;
+    background: rgb(200, 147, 230);
+    text-align: center;
+}   
+
+h1{
+    color: rgba(95, 111, 203, 0.883);
+}
+
+button{
+    background: rgb(191, 0, 255);
+    color: white;
+    border-radius: 8px;
+}
