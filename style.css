@@ -5,7 +5,12 @@ body{
 }   
 
 h1{
-    color: rgba(95, 111, 203, 0.883);
+    color: rgba  table{
+            border-collapse: collapse;
+        }
+        th, td{
+            padding: 10px;
+        }(95, 111, 203, 0.883);
 }
 
 button{

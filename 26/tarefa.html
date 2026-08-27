@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabela</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <table style="width: auto" border="2">
+        <colgroup>
+           <col span="2" style="background-color: lightblue">
+           <col span="4" style="background-color: rgb(238, 144, 144)">
+        <caption>Tabela de dados</caption>
+        <thead> 
+            <tr>
+                <th>Universidade</th>
+                <th id="curso">curso</th>
+                <th>Cidade</th>
+                <th>Modalidade</th>
+                <th>Duração</th>
+            </tr>
+        </thead>
+        
+        <tbody> 
+            <tr>
+                <td rowspan="2">UEG </td>
+                <td>Sistemas</td>
+                <td>Itaberaí</td>
+                <td>Presencial</td>
+                <td>3 anos</td>
+            </tr>
+
+            <tr>
+                <td>Administração</td>
+                <td>anápolis</td>
+                <td>Presencial</td>
+                <td>4 anos</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">UFG</td>
+                <td>Ciência da Computação</td>
+                <td>Goiânia</td>
+                <td>Presencial</td>
+                <td>4 anos</td>
+            </tr>
+
+            <tr><td>Engenharia Ambiental</td>
+                <td>Goiânia</td>
+                <td>Presencial</td>
+                <td>5 anos</td>
+            </tr>
+
+            <tr>
+                <td>PUC goiás</td>
+                <td>Engenharia de Software</td>
+                <td>Goiânia</td>
+                <td>Presencial</td>
+                <td>4 anos</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+              <td colspan="4">Total de cursos apresentados</td>
+              <td>5</td>
+        </tfoot>
+        
+    <tfoot> <!--Rodapé da tabela-->
+        <tr>
+            
+        </tr>
+    </tfoot>    
+    </table>
+
+
+</body>
+</html>
