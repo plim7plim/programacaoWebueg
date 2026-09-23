@@ -1,0 +1,367 @@
+=====================================================================
+  PROGRAMAÇÃO WEB - UEG
+  RESUMO DE TODAS AS TÉCNICAS APLICADAS ATÉ AGORA
+=====================================================================
+
+Pastas:  02-09 | 09-09 | 16-09 | 26 | outros | tarefacasa
+(entre colchetes [ ] está o arquivo onde cada técnica aparece)
+
+
+---------------------------------------------------------------------
+1. ESTRUTURA BÁSICA DE UMA PÁGINA HTML
+---------------------------------------------------------------------
+
+<!DOCTYPE html>          -> diz que é HTML5 (sempre a 1ª linha)
+<html lang="pt-br">      -> raiz da página; lang = idioma do conteúdo
+<head>                   -> configurações (NÃO aparece na tela)
+    <meta charset="UTF-8">                  -> aceita acentos
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                            -> página responsiva (celular)
+    <title>...</title>                      -> texto da aba do navegador
+</head>
+<body>                   -> tudo que APARECE na tela
+</body>
+</html>
+
+Comentário em HTML:  <!-- texto -->
+Comentário em CSS:   /* texto */
+Comentário em JS:    // uma linha      ou      /* várias linhas */
+
+HTML NÃO diferencia maiúscula de minúscula nas tags: <P> = <p>
+MAS o valor de id/class diferencia: id="UF" é diferente de id="uf"
+
+
+---------------------------------------------------------------------
+2. TEXTO
+---------------------------------------------------------------------
+[outros/index2.html, 02-09/index.html, 26/tarefa.html]
+
+<h1> ... <h6>   -> títulos. h1 = maior/mais importante (usar só 1 por página)
+<p>             -> parágrafo
+<br>            -> quebra de linha (tag vazia, sem fechamento)
+<hr>            -> linha horizontal separadora (tag vazia)
+<b>             -> negrito só visual
+<strong>        -> negrito com IMPORTÂNCIA (semântico)
+&copy;          -> entidade HTML que vira o símbolo ©
+Lorem ipsum     -> texto de exemplo (no VS Code: digite "lorem" + Tab)
+
+
+---------------------------------------------------------------------
+3. DIV e SPAN
+---------------------------------------------------------------------
+[02-09/index.html]
+
+<div>   -> container de BLOCO: ocupa a linha inteira, quebra linha.
+           Sem significado, só agrupa.
+<span>  -> INLINE: fica no meio do texto, não quebra linha.
+           Serve para estilizar só um pedaço do texto.
+
+Exemplo:
+<p>Hamburger <span style="color: red;">COM CHEDDAR</span></p>
+
+
+---------------------------------------------------------------------
+4. TAGS SEMÂNTICAS
+---------------------------------------------------------------------
+[02-09/tarefa.html, tarefacasa/tarefaRoberto.html]
+
+Dizem o SIGNIFICADO do conteúdo. Ajudam o Google (SEO) e a acessibilidade.
+
+<header>   -> cabeçalho visível (logo, título)
+<nav>      -> menu de navegação (normalmente uma <ul> de links)
+<main>     -> conteúdo principal (só 1 por página)
+<section>  -> seção de um assunto (normalmente com um h2)
+<article>  -> conteúdo independente (post, notícia)
+<footer>   -> rodapé
+
+Cuidado: <head> (configurações) é DIFERENTE de <header> (cabeçalho visível)
+
+
+---------------------------------------------------------------------
+5. LINKS
+---------------------------------------------------------------------
+[26/tarefa.html, outros/tarefaCasa.html, 02-09/tarefa.html]
+
+<a href="https://www.ueg.br" target="_blank">Texto</a>
+
+href            -> destino do link
+target="_blank" -> abre em NOVA aba
+target="_self"  -> abre na MESMA aba (é o padrão, se não colocar target)
+
+Link ABSOLUTO: endereço completo  -> https://www.ueg.br
+Link RELATIVO: arquivo do projeto -> index.html, img/ueg.png, ./style.css
+"./" = pasta atual
+
+Imagem que vira link:  <a href="..."><img src="..."></a>
+
+
+---------------------------------------------------------------------
+6. IMAGENS
+---------------------------------------------------------------------
+[26/tarefa.html, outros/tarefaCasa.html]
+
+<img src="img/ueg.png" alt="Logo da UEG" title="dica" width="500" height="400">
+
+src      -> caminho do arquivo
+alt      -> texto alternativo (leitor de tela / se não carregar) - SEMPRE colocar
+title    -> dica que aparece ao passar o mouse
+width    -> largura | height -> altura
+<img> é tag vazia (sem fechamento) e é INLINE (fica lado a lado)
+
+Legenda correta:
+<figure>
+    <img src="foto.png" alt="...">
+    <figcaption>Legenda</figcaption>
+</figure>
+
+
+---------------------------------------------------------------------
+7. IFRAME (vídeo do YouTube)
+---------------------------------------------------------------------
+[tarefacasa/tarefaRoberto.html]
+
+<iframe> coloca outra página dentro da sua.
+YouTube > Compartilhar > Incorporar > copiar o código.
+width/height = tamanho | src = link com /embed/ | allowfullscreen = tela cheia
+
+
+---------------------------------------------------------------------
+8. LISTAS
+---------------------------------------------------------------------
+[26/index.html, 02-09/index.html]
+
+<ul>  -> lista NÃO ordenada (bolinhas)
+<ol>  -> lista ORDENADA (1, 2, 3)
+<li>  -> item (vale para as duas)
+
+<ol type="A">   letras  | type="I" romanos | start="5" começa no 5 | reversed
+
+Lista dentro de lista (aninhada) - o jeito certo:
+<ul>
+    <li>Feijão
+        <ul>
+            <li>Feijão preto</li>
+            <li>Feijão carioca</li>
+        </ul>
+    </li>
+</ul>
+
+
+---------------------------------------------------------------------
+9. TABELAS
+---------------------------------------------------------------------
+[26/index.html, 26/tarefa.html]
+
+<table>     -> tabela
+<caption>   -> título da tabela (logo depois de <table>)
+<colgroup>  -> grupo de colunas; <col> = 1 coluna (estiliza a coluna inteira)
+<thead>     -> cabeçalho da tabela
+<tbody>     -> corpo (dados)
+<tfoot>     -> rodapé (totais)
+<tr>        -> linha (table row)
+<th>        -> célula de cabeçalho (negrito, centralizado)
+<td>        -> célula comum (table data)
+
+colspan="2" -> célula ocupa 2 COLUNAS (mescla na HORIZONTAL)
+rowspan="2" -> célula ocupa 2 LINHAS  (mescla na VERTICAL)
+
+Ordem correta:
+table > caption > colgroup > thead > tbody > tfoot
+
+DICA DE PROVA: com rowspan, a(s) linha(s) de baixo têm UMA célula a menos,
+porque aquele espaço já está ocupado.
+
+DICA DE PROVA: some os colspan de cada linha -> tem que dar o mesmo
+número de colunas do cabeçalho. Ex.: colspan="4" + 1 td = 5 colunas.
+
+DICA DE PROVA: fundo da CÉLULA (td/th) vence o fundo da COLUNA (<col>).
+
+border="1" no <table> = borda (atributo antigo; hoje usa CSS)
+
+
+---------------------------------------------------------------------
+10. FORMULÁRIOS
+---------------------------------------------------------------------
+[09-09/index.html, 16-09/index.html, 16-09/index2.html, 16-09/tarefa.html]
+
+<form action="pagina.php" method="post"> ... </form>
+
+action -> PARA ONDE os dados vão
+method -> COMO vão:
+          GET  = dados aparecem na URL (é o padrão)
+          POST = dados vão escondidos
+
+<fieldset> -> caixa com borda que agrupa campos
+<legend>   -> título do fieldset
+
+<label for="nome">Nome</label>
+<input id="nome" ...>
+   -> o "for" do label tem que ser IGUAL ao "id" do input
+      (aí clicar no texto foca o campo)
+
+ATRIBUTOS DO INPUT
+  type         -> tipo do campo (lista abaixo)
+  id           -> identifica (liga com o label). Não pode repetir!
+  name         -> nome do dado ENVIADO ao servidor
+  value        -> valor enviado / texto do botão
+  placeholder  -> dica cinza dentro do campo
+  required     -> obrigatório
+  minlength    -> mínimo de caracteres
+  maxlength    -> máximo de caracteres
+  pattern      -> expressão regular para validar o formato
+  inputmode    -> qual teclado abre no celular (ex.: "numeric")
+
+TIPOS DE INPUT
+  text      -> texto livre
+  email     -> valida se tem @
+  password  -> esconde o texto (●●●)
+  date      -> calendário
+  number    -> só números (pattern e maxlength NÃO funcionam nele!)
+  tel       -> telefone
+  url       -> endereço (precisa de http:// ou https://)
+  radio     -> escolhe só UM do grupo (mesmo name = mesmo grupo)
+  checkbox  -> pode marcar VÁRIOS
+  submit    -> botão que ENVIA
+  reset     -> botão que LIMPA
+
+<button type="submit">Enviar</button>
+   -> igual input submit, mas o texto fica entre as tags
+
+<select name="uf">                      -> lista suspensa (dropdown)
+    <option value="" selected disabled></option>   -> opção vazia inicial
+    <option value="GO">Goiás</option>   -> value = enviado | texto = aparece
+</select>
+   selected = já vem marcada | disabled = não pode escolher
+
+<textarea rows="5" cols="40"></textarea>
+   -> texto de várias linhas. rows = altura, cols = largura
+
+PATTERN (expressão regular)
+  [0-9]      -> um dígito
+  {3}        -> repete 3 vezes
+  \.         -> um ponto de verdade
+  CPF: [0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}   -> 000.000.000-00
+  CEP: [0-9]{5}-[0-9]{3}                        -> 76450-000
+
+
+---------------------------------------------------------------------
+11. CSS - ONDE ESCREVER
+---------------------------------------------------------------------
+
+1) INLINE   -> no próprio elemento:   <p style="color: red;">
+               [02-09/index.html, 09-09/index.html]
+2) INTERNO  -> tag <style> dentro do <head>
+               [26/tarefa.html]
+3) EXTERNO  -> arquivo .css ligado no <head>:
+               <link rel="stylesheet" href="style.css">
+               [outros/index.html + outros/style.css]
+
+Formato:   seletor { propriedade: valor; }
+
+
+---------------------------------------------------------------------
+12. CSS - SELETORES
+---------------------------------------------------------------------
+[26/tarefa.html, outros/style.css]
+
+p              -> ELEMENTO: todos os <p>
+.logo          -> CLASSE: todos com class="logo" (pode repetir)
+#curso         -> ID: o elemento com id="curso" (único na página)
+img.logo       -> <img> que tem class="logo"
+th#curso       -> <th> que tem id="curso"
+th, td         -> VÍRGULA: aplica em th E em td
+tfoot td       -> ESPAÇO (descendente): td que está DENTRO de tfoot
+
+
+---------------------------------------------------------------------
+13. CSS - PROPRIEDADES USADAS
+---------------------------------------------------------------------
+
+TEXTO
+  color             -> cor do texto
+  font-family       -> fonte (Arial; Georgia, "Times New Roman", serif)
+  font-size         -> tamanho (28px)
+  font-weight       -> bold = negrito
+  text-align        -> center = centraliza
+  text-transform    -> uppercase = TUDO MAIÚSCULO
+
+FUNDO E BORDA
+  background / background-color -> cor de fundo
+  border            -> 1px solid #000  (espessura, estilo, cor)
+  border: none      -> tira a borda
+  border-color      -> cor da borda
+  border-radius     -> arredonda os cantos
+  border-collapse: collapse -> junta bordas da tabela (sem borda dupla)
+
+ESPAÇAMENTO
+  margin   -> espaço de FORA do elemento
+  padding  -> espaço de DENTRO do elemento
+  1 valor:  10px          -> todos os lados
+  2 valores: 10px 0       -> cima/baixo  |  laterais
+  margin: 20px auto       -> centraliza horizontalmente
+  margin-top / margin-bottom -> só em cima / só embaixo
+
+TAMANHO
+  width / height    -> largura / altura
+  width: auto       -> só o necessário
+  max-height        -> altura máxima
+
+CORES
+  nome   -> red, white, lightblue, blueviolet
+  hexa   -> #000 (preto), #ffffff (branco)
+  rgb    -> rgb(255, 0, 0)  -> vermelho, verde, azul (0 a 255)
+  rgba   -> rgba(95, 111, 203, 0.8) -> o "a" é a opacidade (0 a 1)
+
+
+---------------------------------------------------------------------
+14. JAVASCRIPT
+---------------------------------------------------------------------
+[outros/index.html + outros/script.js]
+
+Ligar arquivo JS:
+  <script src="script.js"></script>   -> no fim do <body>
+  <script src="main.js" defer></script> -> no <head>, com defer
+      (defer = só executa depois que o HTML carregou)
+
+Função:
+  function saudacao() {
+      alert("Você clicou nesse botão!");   // mostra caixinha de aviso
+  }
+
+Evento no HTML:
+  <button onclick="saudacao()">clica aqui!</button>
+      -> onclick = quando clicar, chama a função
+
+
+---------------------------------------------------------------------
+15. ERROS COMUNS (achados no nosso código)
+---------------------------------------------------------------------
+
+- lang="en" em página em português (o certo: lang="pt-br")
+- label com for diferente do id do input (não liga)
+- id repetido na mesma página (id="senha" duas vezes)
+- CEP com type="number" + pattern (pattern não funciona em number)
+- <th>/<td> fora de <tr>
+- <ul> aninhada fora do <li>
+- <figcaption> sem <figure>
+- <img> sem alt
+- <p> dentro de <b> (bloco dentro de inline)
+- link/arquivo que não existe na pasta (dá erro 404)
+
+
+---------------------------------------------------------------------
+16. COLA RÁPIDA - DIFERENÇAS QUE MAIS CAEM
+---------------------------------------------------------------------
+
+div x span          -> bloco x inline
+ul x ol             -> bolinha x número
+th x td             -> cabeçalho x dado
+colspan x rowspan   -> junta colunas (horizontal) x junta linhas (vertical)
+GET x POST          -> dados na URL x escondidos
+radio x checkbox    -> escolhe 1 x escolhe vários
+id x class          -> # único x . pode repetir
+margin x padding    -> espaço fora x espaço dentro
+b x strong          -> só visual x com importância
+head x header       -> configurações x cabeçalho visível
+_blank x _self      -> nova aba x mesma aba
+inline x interno x externo -> style="" x <style> x <link>

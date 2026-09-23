@@ -1,24 +1,44 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz; o ideal seria lang="pt-br" -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal</title>
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+    <title>Portal</title> <!-- título da aba -->
 </head>
-<body>  
+
+<body>
+
+    <!-- ============================================================
+         TAGS SEMÂNTICAS
+         Tags que DIZEM O SIGNIFICADO do conteúdo (a <div> não tem significado).
+         Visualmente parecem uma div, mas ajudam o Google (SEO)
+         e os leitores de tela (acessibilidade).
+         ============================================================ -->
+
+
+    <!-- <header> = CABEÇALHO da página (logo, título, às vezes o menu) -->
     <header>
-        <h1>Portal de Universidades e Cursos de Goiás</h1>  
+        <h1>Portal de Universidades e Cursos de Goiás</h1> <!-- título principal (1 h1 por página) -->
     </header>
 
+
+    <!-- <nav> = NAVEGAÇÃO: bloco com os links principais (menu). Menu costuma ser uma <ul> -->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tarefa.html">Tarefa</a></li>
-            <li><a href="index2.html">Index 2</a></li>
+            <li><a href="index.html">Home</a></li>     <!-- link RELATIVO: arquivo na mesma pasta -->
+            <li><a href="tarefa.html">Tarefa</a></li>  <!-- link para esta própria página -->
+            <li><a href="index2.html">Index 2</a></li> <!-- (index2.html não existe nesta pasta -> erro 404) -->
         </ul>
     </nav>
 
+
+    <!-- <main> = CONTEÚDO PRINCIPAL da página (só 1 por página) -->
     <main>
+
+        <!-- <section> = SEÇÃO temática, um bloco de assunto (normalmente com um h2) -->
         <section>
             <h2>Universidades e Cursos</h2>
             <p>Este portal apresenta informações sobre universidades e cursos de graduação em Goiás.</p>
@@ -33,22 +53,30 @@
             <h2>Tabelas de Dados</h2>
             <p>As tabelas a seguir apresentam informações detalhadas sobre universidades e cursos.</p>
         </section>
-    </main>     
 
+    </main>
+
+
+    <!-- seção fora do main (conteúdo secundário) -->
     <section>
         <h2>Contato</h2>
         <p>Para dúvidas ou sugestões, entre em contato conosco.</p>
     </section>
 
+
+    <!-- <article> = conteúdo INDEPENDENTE, que faz sentido sozinho (post, notícia, artigo) -->
     <article>
         <h2>Artigo Relacionado</h2>
-        <p>Confira nosso artigo sobre a importância da educação superior em Goiás.</p>  
-
+        <p>Confira nosso artigo sobre a importância da educação superior em Goiás.</p>
     </article>
 
+
+    <!-- <footer> = RODAPÉ (direitos autorais, contato, links finais) -->
     <footer>
+        <!-- &copy; = ENTIDADE HTML que vira o símbolo © -->
         <p>&copy; 2024 Portal de Universidades e Cursos de Goiás. Todos os direitos reservados.</p>
     </footer>
-    
+
 </body>
+
 </html>

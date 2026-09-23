@@ -1,99 +1,145 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara que o documento é HTML5 (sempre a 1ª linha do arquivo) -->
+
+<!-- Elemento raiz da página. lang = idioma do conteúdo (o certo aqui seria "pt-br") -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabelas</title>
+
+<head> <!-- HEAD: informações SOBRE a página (não aparecem na tela) -->
+    <meta charset="UTF-8"> <!-- UTF-8 = aceita acentos (á, ç, ã...) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo: largura da tela do dispositivo, zoom 100% -->
+    <title>Tabelas</title> <!-- texto da aba do navegador -->
 </head>
-<body>  
+
+<body> <!-- BODY: tudo que aparece na tela fica aqui dentro -->
+
+    <!-- ============================================================
+         TABELA 1 - tabela simples
+         <table> = tabela | <tr> = linha | <th> = célula de cabeçalho | <td> = célula de dado
+         Sem border, a tabela aparece sem linhas/bordas
+         ============================================================ -->
     <table>
-        <th>Universidade</th> <!--Linha de titulios de colunas-->
+
+        <!-- <th> = Table Header: fica em negrito e centralizado por padrão -->
+        <!-- Obs.: o correto seria colocar esses <th> dentro de um <tr>; o navegador corrige sozinho -->
+        <th>Universidade</th> <!-- Linha de títulos de colunas -->
         <th>Cursos</th>
         <th>Cidades</th>
 
-        <tr> <!--Linha de dados-->
-            <td>Universidade Estadual de Goiás</td> 
-            <td> UEG </td>
+        <!-- <tr> = Table Row = uma LINHA. Cada <td> dentro dela vira uma coluna -->
+        <tr> <!-- Linha de dados 1 -->
+            <td>Universidade Estadual de Goiás</td> <!-- <td> = Table Data = célula comum -->
+            <td>UEG</td>
             <td>Itaberaí</td>
         </tr>
 
-        <tr> <!--Linha de dados-->
-            <td>Universidade Federal de Goiás</td> 
-            <td> UFG </td>
+        <tr> <!-- Linha de dados 2 -->
+            <td>Universidade Federal de Goiás</td>
+            <td>UFG</td>
             <td>Goiania</td>
         </tr>
-        
-        <tr> <!--Linha de dados-->
-            <td>Pontificia Universidade Catolica</td> 
-            <td> PUC </td>
-            <td>Goiania</td>
-        </tr>
-        
-    </table> <!--Tabela ex-->
-<br>
 
-    <table style="width: auto" border="2"> <!--auto pra ficar file-->
+        <tr> <!-- Linha de dados 3 -->
+            <td>Pontificia Universidade Catolica</td>
+            <td>PUC</td>
+            <td>Goiania</td>
+        </tr>
+
+    </table> <!-- fecha a tabela 1 -->
+
+    <br> <!-- <br> = quebra de linha (tag vazia, sem fechamento). Dá espaço entre as tabelas -->
+
+
+    <!-- ============================================================
+         TABELA 2 - tabela completa: caption, thead, tbody, tfoot, colspan, rowspan
+         style="width: auto" = a tabela só ocupa a largura necessária
+         border="2" = borda de 2px (atributo antigo; hoje o ideal é usar CSS)
+         ============================================================ -->
+    <table style="width: auto" border="2">
+
+        <!-- <caption> = TÍTULO da tabela (aparece em cima). Deve vir logo depois de <table> -->
         <caption>Tabela de dados</caption>
-        <thead> <!--Cabeçalho da tabela-->
-            <tr><!--Ela vai ocupar 4 linhas-->
 
-                <th></th>
+        <!-- <thead> = CABEÇALHO da tabela (agrupa as linhas de títulos) -->
+        <thead>
+            <tr>
+                <th></th> <!-- célula vazia (fica em cima da coluna "Exatas") -->
                 <th>Nome do Aluno do curso</th>
                 <th>Nome do curso</th>
+
+                <!-- colspan="2" = a célula OCUPA 2 COLUNAS (mescla na horizontal) -->
+                <!-- "Localização" fica em cima de cidade + estado -->
                 <th colspan="2">Localização</th>
             </tr>
         </thead>
-        
-        <tbody> <!--Corpo da tabela-->
+
+        <!-- <tbody> = CORPO da tabela (agrupa as linhas de dados) -->
+        <tbody>
+
+            <!-- rowspan="4" = a célula OCUPA 4 LINHAS (mescla na vertical) -->
+            <!-- Obs.: o certo seria este <th> ficar dentro do 1º <tr> abaixo, com rowspan="3" (são 3 alunos) -->
             <th rowspan="4">Exatas</th>
-            
-        <tr>
-            <td>Godofredo das Cove</td>
-            <td>Engenharia civil</td>
-            <td>Anápolis </td>
-            <td>Goiás</td>
-        </tr>
 
-        <tr>
-            <td>Tilambucano</td>
-            <td>Matemática</td>
-            <td>Itaberaí</td>
-            <td>Goiás</td>
-        </tr>
+            <tr> <!-- aluno 1 -->
+                <td>Godofredo das Cove</td> <!-- nome -->
+                <td>Engenharia civil</td>   <!-- curso -->
+                <td>Anápolis</td>           <!-- cidade (1ª coluna de "Localização") -->
+                <td>Goiás</td>              <!-- estado (2ª coluna de "Localização") -->
+            </tr>
 
-        <tr>
-            <td>Ribite</td>
-            <td>Engenharia de computação</td>
-            <td>Goianira</td>
-            <td>Goiás</td>
-        </tr>
-    </tbody>
-        
-    <tfoot> <!--Rodapé da tabela-->
-        <tr>
-            <td colspan="4">Tabela de dados</td>
-        </tr>
-    </tfoot>    
-    </table>
+            <tr> <!-- aluno 2 -->
+                <td>Tilambucano</td>
+                <td>Matemática</td>
+                <td>Itaberaí</td>
+                <td>Goiás</td>
+            </tr>
 
-    <ul> <!--Lista não ordenada-->
+            <tr> <!-- aluno 3 -->
+                <td>Ribite</td>
+                <td>Engenharia de computação</td>
+                <td>Goianira</td>
+                <td>Goiás</td>
+            </tr>
+
+        </tbody>
+
+        <!-- <tfoot> = RODAPÉ da tabela (totais, observações). Fica sempre embaixo -->
+        <tfoot>
+            <tr>
+                <td colspan="4">Tabela de dados</td> <!-- colspan="4" = ocupa 4 colunas -->
+            </tr>
+        </tfoot>
+
+    </table> <!-- fecha a tabela 2 -->
+
+
+    <!-- ============================================================
+         LISTAS
+         <ul> = lista NÃO ordenada (bolinhas •)
+         <ol> = lista ORDENADA (1, 2, 3...)
+         <li> = cada item da lista
+         ============================================================ -->
+
+    <ul> <!-- Lista não ordenada -->
         <li>Arroz</li>
         <li>Feijão</li>
-            <ul> <!--Lista não ordenada dentro de outra lista não ordenada-->
-                <li>Feijão preto</li>
-                <li>Feijão carioca</li>
-            </ul>
+
+        <!-- Lista ANINHADA (lista dentro de lista): aparece mais para dentro, com marcador ◦ -->
+        <!-- Obs.: o correto é a <ul> interna ficar DENTRO do <li>Feijão ... </li> -->
+        <ul>
+            <li>Feijão preto</li>
+            <li>Feijão carioca</li>
+        </ul>
+
         <li>Carne</li>
         <li>Banana</li>
-
     </ul>
-    
 
-    <ol><!--Lista ordenada -->
-        <li>João</li>
-        <li>Maria</li>
-        <li>Carlos</li>
+    <!-- Dica: <ol type="A"> (letras), type="I" (romanos), start="5" (começa no 5), reversed (ao contrário) -->
+    <ol> <!-- Lista ordenada -->
+        <li>João</li>   <!-- 1. -->
+        <li>Maria</li>  <!-- 2. -->
+        <li>Carlos</li> <!-- 3. -->
     </ol>
-    
-</body>
-</html>
+
+</body> <!-- fecha o corpo -->
+
+</html> <!-- fecha o documento -->

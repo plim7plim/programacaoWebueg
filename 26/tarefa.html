@@ -1,180 +1,245 @@
-<!doctype html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz da página; lang="pt-br" = conteúdo em português do Brasil -->
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Universidades e Cursos de Goiás</title>
+
+<head> <!-- HEAD: configurações da página (não aparecem na tela) -->
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+    <title>Universidades e Cursos de Goiás</title> <!-- título da aba -->
+
+    <!-- <style> = CSS INTERNO (escrito dentro do próprio HTML) -->
+    <!-- Formato: seletor { propriedade: valor; } -->
     <style>
-      body {
-        font-family: Georgia, "Times New Roman", serif;
-        margin: 20px;
-        color: #000;
-      }
-      h1 {
-        font-size: 28px;
-      }
-      h2 {
-        font-size: 20px;
-        margin-top: 30px;
-      }
-      h3 {
-        font-size: 17px;
-        margin-top: 25px;
-      }
-      img.logo {
-        max-height: 60px;
-        margin: 10px 0;
-      }
-      table {
-        border-collapse: collapse;
-        margin-top: 10px;
-      }
-      caption {
-        font-weight: bold;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-      }
-      th,
-      td {
-        border: 1px solid #000;
-        padding: 4px 8px;
-      }
-      th {
-        background-color: #ffffff;
-      }
-      th#curso,
-      td.curso {
-        background-color: lightblue;
-      }
-      th#modalidade,
-      td.modalidade {
-        background-color: rgb(9, 255, 0);
-      }
-      tfoot td {
-        font-weight: bold;
-      }
+        /* Seletor de ELEMENTO: aplica no <body> (os filhos herdam fonte e cor) */
+        body {
+            font-family: Georgia, "Times New Roman", serif; /* tenta Georgia; senão Times; senão qualquer serifada */
+            margin: 20px;  /* espaço EXTERNO de 20px em volta */
+            color: #000;   /* cor do texto: preto em hexadecimal (#000 = #000000) */
+        }
+
+        h1 {
+            font-size: 28px; /* tamanho da fonte */
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 30px; /* espaço acima de cada subtítulo */
+        }
+
+        /* (não há <h3> na página, então esta regra não aparece) */
+        h3 {
+            font-size: 17px;
+            margin-top: 25px;
+        }
+
+        /* Elemento + CLASSE: só as <img> com class="logo" */
+        img.logo {
+            max-height: 60px; /* altura MÁXIMA (mantém a proporção) */
+            margin: 10px 0;   /* 2 valores = 10px em cima/embaixo, 0 nas laterais */
+        }
+
+        table {
+            border-collapse: collapse; /* junta as bordas das células (sem borda dupla) */
+            margin-top: 10px;
+        }
+
+        caption {
+            font-weight: bold;          /* negrito */
+            margin-bottom: 5px;         /* espaço entre o título e a tabela */
+            text-transform: uppercase;  /* mostra TUDO EM MAIÚSCULAS */
+        }
+
+        /* Vírgula = mesmo estilo para VÁRIOS seletores (th E td) */
+        th,
+        td {
+            border: 1px solid #000; /* borda: espessura, estilo (solid = contínua), cor */
+            padding: 4px 8px;       /* espaço INTERNO: 4px em cima/embaixo, 8px nas laterais */
+        }
+
+        th {
+            background-color: #ffffff; /* fundo branco */
+        }
+
+        /* # = seletor de ID (único na página) | . = seletor de CLASSE (pode repetir) */
+        /* th#curso = o <th> com id="curso" | td.curso = todos os <td> com class="curso" */
+        th#curso,
+        td.curso {
+            background-color: lightblue; /* cor pelo NOME */
+        }
+
+        th#modalidade,
+        td.modalidade {
+            background-color: rgb(9, 255, 0); /* rgb(vermelho, verde, azul) de 0 a 255 -> verde */
+        }
+
+        /* Seletor DESCENDENTE (com espaço): os <td> que estão dentro do <tfoot> */
+        tfoot td {
+            font-weight: bold;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body> <!-- BODY: conteúdo visível -->
+
+    <!-- h1 = título principal (só 1 por página). Vai do h1 (maior) ao h6 (menor) -->
     <h1>Universidades e Cursos de Goiás</h1>
 
+    <!-- <p> = parágrafo -->
     <p>
-      Conheça algumas das principais instituições de ensino superior presentes
-      no estado de Goiás.
+        Conheça algumas das principais instituições de ensino superior presentes
+        no estado de Goiás.
     </p>
 
+    <!-- <strong> = texto IMPORTANTE (aparece em negrito) -->
     <p>
-      Nesta página são apresentadas informações sobre a
-      <strong>Universidade Estadual de Goiás</strong>, a
-      <strong>Universidade Federal de Goiás</strong> e a
-      <strong>PUC Goiás</strong>.
+        Nesta página são apresentadas informações sobre a
+        <strong>Universidade Estadual de Goiás</strong>, a
+        <strong>Universidade Federal de Goiás</strong> e a
+        <strong>PUC Goiás</strong>.
     </p>
 
-    <h2>Universidade Estadual de Goiás - UEG</h2>
-    <img
-      class="logo"
-      src="img/ueg.png"
-      alt="Logo da Universidade Estadual de Goiás"
-    />
+
+    <!-- ============================== UEG ============================== -->
+    <h2>Universidade Estadual de Goiás - UEG</h2> <!-- h2 = subtítulo -->
+
+    <!-- <img> = imagem (tag vazia, sem fechamento)
+         class = aplica o CSS img.logo
+         src   = caminho RELATIVO do arquivo (pasta img)
+         alt   = texto alternativo (acessibilidade / se a imagem não carregar) -->
+    <img class="logo" src="img/ueg.png" alt="Logo da Universidade Estadual de Goiás">
+
     <p>
-      A Universidade Estadual de Goiás é uma instituição pública de ensino
-      superior presente em diferentes municípios do estado.
-    </p>
-    <p>
-      <a href="https://www.ueg.br" target="_blank">Acessar o site da UEG</a>
+        A Universidade Estadual de Goiás é uma instituição pública de ensino
+        superior presente em diferentes municípios do estado.
     </p>
 
+    <!-- <a> = link | href = destino (URL ABSOLUTA, com https://) | target="_blank" = abre em NOVA ABA -->
+    <p>
+        <a href="https://www.ueg.br" target="_blank">Acessar o site da UEG</a>
+    </p>
+
+
+    <!-- ============================== UFG ============================== -->
     <h2>Universidade Federal de Goiás - UFG</h2>
-    <img
-      class="logo"
-      src="img/ufg.png"
-      alt="Logo da Universidade Federal de Goiás"
-    />
+
+    <img class="logo" src="img/ufg.png" alt="Logo da Universidade Federal de Goiás">
+
     <p>
-      A Universidade Federal de Goiás é uma instituição pública de ensino
-      superior com atuação em diferentes áreas do conhecimento.
-    </p>
-    <p>
-      <a href="https://www.ufg.br" target="_blank">Acessar o site da UFG</a>
+        A Universidade Federal de Goiás é uma instituição pública de ensino
+        superior com atuação em diferentes áreas do conhecimento.
     </p>
 
+    <p>
+        <a href="https://www.ufg.br" target="_blank">Acessar o site da UFG</a>
+    </p>
+
+
+    <!-- ============================== PUC ============================== -->
     <h2>Pontifícia Universidade Católica de Goiás - PUC Goiás</h2>
-    <img class="logo" src="img/puc.png" alt="Logo da PUC Goiás" />
+
+    <img class="logo" src="img/puc.png" alt="Logo da PUC Goiás">
+
     <p>
-      A PUC Goiás é uma instituição de ensino superior localizada em Goiânia,
-      oferecendo cursos em diversas áreas.
-    </p>
-    <p>
-      <a href="https://www.puc.go.br" target="_blank"
-        >Acessar o site da PUC Goiás</a
-      >
+        A PUC Goiás é uma instituição de ensino superior localizada em Goiânia,
+        oferecendo cursos em diversas áreas.
     </p>
 
+    <p>
+        <a href="https://www.puc.go.br" target="_blank">Acessar o site da PUC Goiás</a>
+    </p>
+
+
+    <!-- ======================= TABELA DE CURSOS ======================= -->
     <h2>Cursos de Graduação</h2>
 
+    <!-- border="1" = borda de 1px (atributo antigo; o CSS acima já coloca borda) -->
     <table border="1">
-      <caption>
-        Cursos de graduação - Universidades de Goiás
-      </caption>
-      <colgroup>
-        <col />
-        <col style="background-color: rgb(32, 7, 36)" />
-        <col />
-        <col style="background-color: rgb(238, 144, 144)" />
-        <col />
-      </colgroup>
-      <thead>
-        <tr>
-          <th>Universidade</th>
-          <th id="curso">Curso</th>
-          <th>Cidade</th>
-          <th id="modalidade">Modalidade</th>
-          <th>Duração</th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <tr>
-          <td rowspan="2">UEG</td>
-          <td class="curso">Sistemas de Informação</td>
-          <td>Itaberaí</td>
-          <td class="modalidade">Presencial</td>
-          <td>4 anos</td>
-        </tr>
-        <tr>
-          <td class="curso">Administração</td>
-          <td>Anápolis</td>
-          <td class="modalidade">Presencial</td>
-          <td>4 anos</td>
-        </tr>
-        <tr>
-          <td rowspan="2">UFG</td>
-          <td class="curso">Ciência da Computação</td>
-          <td>Goiânia</td>
-          <td class="modalidade">Presencial</td>
-          <td>4 anos</td>
-        </tr>
-        <tr>
-          <td class="curso">Engenharia Ambiental</td>
-          <td>Goiânia</td>
-          <td class="modalidade">Presencial</td>
-          <td>5 anos</td>
-        </tr>
-        <tr>
-          <td>PUC Goiás</td>
-          <td class="curso">Engenharia de Software</td>
-          <td>Goiânia</td>
-          <td class="modalidade">Presencial</td>
-          <td>4 anos</td>
-        </tr>
-      </tbody>
+        <!-- título da tabela (o CSS deixa em negrito e MAIÚSCULAS) -->
+        <caption>Cursos de graduação - Universidades de Goiás</caption>
 
-      <tfoot>
-        <tr>
-          <td colspan="4">Total de cursos apresentados</td>
-          <td>5</td>
-        </tr>
-      </tfoot>
+        <!-- <colgroup> + <col> = estilizar uma COLUNA INTEIRA de uma vez. Cada <col> = 1 coluna, na ordem.
+             Vem depois do <caption> e antes do <thead>.
+             Dica: <col span="2"> aplica o mesmo estilo em 2 colunas seguidas -->
+        <colgroup>
+            <col> <!-- coluna 1 (Universidade): sem estilo -->
+
+            <!-- coluna 2 (Curso): roxo escuro... MAS as células têm class="curso" (lightblue).
+                 O fundo da CÉLULA tem prioridade sobre o da COLUNA, então o roxo não aparece -->
+            <col style="background-color: rgb(32, 7, 36)">
+
+            <col> <!-- coluna 3 (Cidade): sem estilo -->
+
+            <!-- coluna 4 (Modalidade): rosa... também coberto pelo verde da class="modalidade" -->
+            <col style="background-color: rgb(238, 144, 144)">
+
+            <col> <!-- coluna 5 (Duração): sem estilo -->
+        </colgroup>
+
+        <thead> <!-- cabeçalho da tabela -->
+            <tr>
+                <th>Universidade</th>
+                <th id="curso">Curso</th>           <!-- id="curso" -> CSS th#curso (azul claro) -->
+                <th>Cidade</th>
+                <th id="modalidade">Modalidade</th> <!-- id="modalidade" -> CSS th#modalidade (verde) -->
+                <th>Duração</th>
+            </tr>
+        </thead>
+
+        <tbody> <!-- corpo da tabela (dados) -->
+
+            <tr>
+                <td rowspan="2">UEG</td> <!-- rowspan="2" = "UEG" ocupa 2 LINHAS (esta e a próxima) -->
+                <td class="curso">Sistemas de Informação</td> <!-- class="curso" -> fundo azul claro -->
+                <td>Itaberaí</td>
+                <td class="modalidade">Presencial</td>        <!-- class="modalidade" -> fundo verde -->
+                <td>4 anos</td>
+            </tr>
+
+            <tr>
+                <!-- sem célula de universidade: o espaço já é do rowspan="2" da UEG -->
+                <td class="curso">Administração</td>
+                <td>Anápolis</td>
+                <td class="modalidade">Presencial</td>
+                <td>4 anos</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">UFG</td> <!-- UFG ocupa 2 linhas -->
+                <td class="curso">Ciência da Computação</td>
+                <td>Goiânia</td>
+                <td class="modalidade">Presencial</td>
+                <td>4 anos</td>
+            </tr>
+
+            <tr>
+                <!-- só 4 <td>: a 1ª coluna é do rowspan da UFG -->
+                <td class="curso">Engenharia Ambiental</td>
+                <td>Goiânia</td>
+                <td class="modalidade">Presencial</td>
+                <td>5 anos</td>
+            </tr>
+
+            <tr>
+                <td>PUC Goiás</td> <!-- só 1 curso, não precisa de rowspan -->
+                <td class="curso">Engenharia de Software</td>
+                <td>Goiânia</td>
+                <td class="modalidade">Presencial</td>
+                <td>4 anos</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot> <!-- rodapé (o CSS "tfoot td" deixa em negrito) -->
+            <tr>
+                <td colspan="4">Total de cursos apresentados</td> <!-- ocupa 4 colunas -->
+                <td>5</td> <!-- 5ª coluna: 4 + 1 = 5, fecha certinho com o cabeçalho -->
+            </tr>
+        </tfoot>
+
     </table>
-  </body>
+
+</body>
+
 </html>

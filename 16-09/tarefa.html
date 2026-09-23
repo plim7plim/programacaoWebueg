@@ -1,80 +1,120 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz; o ideal seria lang="pt-br" -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de usuário</title>
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+    <title>Cadastro de usuário</title> <!-- título da aba -->
 </head>
+
 <body>
-    <h1>Cadastro de usuário</h1>
+
+    <h1>Cadastro de usuário</h1> <!-- título principal -->
+
+    <!-- <form> sem action e sem method: envia para a PRÓPRIA página usando GET (dados na URL) -->
     <form>
-    <fieldset>
-        <legend>Dados pessoais</legend>
-        <label for="nome"> <!--ID/ligação -->
-        Nome Completo
-        </label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" minlength="4" maxlength="50" required> <!--placeholder = dica para o usuário--> <!--minlength = tamanho mínimo--> <!--maxlength = tamanho máximo--> <!--required = obrigatório-->
-        <br> <br>
 
-        <label for="cpf">
-            CPF
-        </label>
-        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" inputmode="numeric" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" maxlength="14" required> <!--pattern = expressão regular para validar o campo-->
-        <br> <br>
 
-         <p>Sexo: </p>
-        <input type="radio" id="Masculino" name="Masculino" value="Masculino" > 
-        <label for="faco">Masculino</label>
+        <!-- ======================= FIELDSET 1: DADOS PESSOAIS ======================= -->
+        <fieldset> <!-- caixa com borda agrupando campos -->
 
-        <input type="radio" id="feminino" name="Masculino" value="feminino" > 
-        <label for="Nfaco">feminino</label> <!--name faz as labels serem do mesmo grupo-->
-        <br> <br>
+            <legend>Dados pessoais</legend> <!-- título da caixa -->
 
-         <label for="estadoCivil">Estado Civil</label>
-            <select id="estadoCivil" name="estadoCivil"> <!--Caixinha de seleção-->
+            <!-- for="nome" liga com id="nome" -->
+            <label for="nome">Nome Completo</label>
+            <!-- placeholder = dica | minlength = mínimo | maxlength = máximo | required = obrigatório -->
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" minlength="4" maxlength="50" required>
+
+            <br><br>
+
+            <label for="cpf">CPF</label>
+            <!-- inputmode="numeric" = no celular abre o teclado de NÚMEROS (o campo continua sendo texto)
+                 pattern = expressão regular que valida o formato:
+                     [0-9]{3}  = 3 dígitos
+                     \.        = um ponto de verdade (a barra "escapa" o ponto)
+                     -[0-9]{2} = hífen + 2 dígitos
+                     resultado: 000.000.000-00
+                 maxlength="14" = 11 números + 2 pontos + 1 hífen -->
+            <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" inputmode="numeric" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" maxlength="14" required>
+
+            <br><br>
+
+
+            <!-- ---------- RADIO ----------
+                 só pode marcar UM. Os dois têm name="Masculino", por isso são do mesmo grupo -->
+            <p>Sexo:</p>
+
+            <input type="radio" id="Masculino" name="Masculino" value="Masculino">
+            <!-- atenção: for="faco" não bate com id="Masculino" (o certo era for="Masculino") -->
+            <label for="faco">Masculino</label>
+
+            <input type="radio" id="feminino" name="Masculino" value="feminino">
+            <!-- mesmo problema: o certo era for="feminino" -->
+            <label for="Nfaco">feminino</label>
+
+            <br><br>
+
+
+            <!-- ---------- SELECT ----------
+                 <select> = lista suspensa; value = o que é enviado, texto = o que aparece -->
+            <label for="estadoCivil">Estado Civil</label>
+
+            <select id="estadoCivil" name="estadoCivil">
                 <option value="solteiro">Solteiro</option>
                 <option value="casado">Casado</option>
                 <option value="divorciado">Divorciado</option>
                 <option value="viuvo">Viuvo</option>
             </select>
-        <br> <br>
-    </fieldset> 
 
-    <fieldset>
-        <legend>Dados de contato </legend>
-        <label for="email">
-                    E-mail
-            </label>
+            <br><br>
+
+        </fieldset>
+
+
+        <!-- ======================= FIELDSET 2: CONTATO ======================= -->
+        <fieldset>
+
+            <legend>Dados de contato</legend>
+
+            <label for="email">E-mail</label>
+            <!-- type="email" = valida se tem @ -->
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            <br> <br>
 
-        <label for="website">
-            website
-        </label>
-         <input type="url" id="site" name="site" placeholder="Digite seu sitel" required>
-        <br> <br>
+            <br><br>
 
-        <label for="Endereco"> 
-                    Seu endereco
-            </label>
-            <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereco" minlength="4" maxlength="500" required> 
-        <br><br>
+            <!-- for="website" não bate com id="site" (não liga)
+                 type="url" valida se é um endereço com http(s):// -->
+            <label for="website">website</label>
+            <input type="url" id="site" name="site" placeholder="Digite seu sitel" required>
 
-        <label for="Bairro"> 
-                    Seu Bairro
-            </label>
+            <br><br>
+
+            <!-- for="Endereco" x id="endereco": maiúscula/minúscula IMPORTA no id, então não liga -->
+            <label for="Endereco">Seu endereco</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereco" minlength="4" maxlength="500" required>
+
+            <br><br>
+
+            <label for="Bairro">Seu Bairro</label>
             <input type="text" id="bairro" name="bairro" placeholder="Digite seu bairro" minlength="4" maxlength="500" required>
-        <br><br>
 
-        <label for="cidade"> 
-                    Sua cidade
-            </label>
+            <br><br>
+
+            <label for="cidade">Sua cidade</label>
             <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" minlength="4" maxlength="500" required>
-        <br><br>
 
-        <label for="estado">UF</label>
-            <select id="UF" name="UF"> <!--Caixinha de seleção-->
-                <option value=null></option>
+            <br><br>
+
+
+            <!-- ---------- SELECT DE ESTADOS ----------
+                 value = SIGLA enviada, texto = nome que aparece
+                 (for="estado" não bate com id="UF") -->
+            <label for="estado">UF</label>
+
+            <select id="UF" name="UF">
+                <option value=null></option> <!-- opção vazia inicial (o ideal seria value="") -->
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
@@ -103,32 +143,43 @@
                 <option value="SE">Sergipe</option>
                 <option value="TO">Tocantins</option>
             </select>
-        <br> <br>
 
-        <label for="cep">
-                CEP
-                </label> 
-                <input type="number" id="cep" name="cep" placeholder="Digite seu CEP" pattern="[0-9]{5}-[0-9]{3}" maxlength="8" required> <!--pattern = expressão regular para validar o campo-->
-                <br> <br>
+            <br><br>
 
-    </fieldset>
+            <label for="cep">CEP</label>
+            <!-- pattern [0-9]{5}-[0-9]{3} = 76450-000
+                 obs.: pattern e maxlength NÃO funcionam em type="number"; para CEP o certo é type="text" -->
+            <input type="number" id="cep" name="cep" placeholder="Digite seu CEP" pattern="[0-9]{5}-[0-9]{3}" maxlength="8" required>
 
-    <fieldset>
-        <legend>Dados de cadastro</legend>
+            <br><br>
 
-        <label for="Login"> 
-                    Login:
-            </label>
+        </fieldset>
+
+
+        <!-- ======================= FIELDSET 3: CADASTRO ======================= -->
+        <fieldset>
+
+            <legend>Dados de cadastro</legend>
+
+            <label for="Login">Login:</label>
             <input type="text" id="Login" name="Login" placeholder="Digite seu login" minlength="4" maxlength="500" required>
-        <br><br>
 
-        <label for="senha">
-                    Senha
-                </label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" minlength="6" maxlength="20" required>
-                <br> <br>
+            <br><br>
 
-        <b><p>Deseja receber informações sobre:</p></b>
+            <label for="senha">Senha</label>
+            <!-- type="password" = esconde o que é digitado -->
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" minlength="6" maxlength="20" required>
+
+            <br><br>
+
+
+            <!-- <b> = negrito. (o correto seria <p><b>...</b></p>:
+                 <p> é bloco e não deveria ficar dentro de <b>, que é inline) -->
+            <b><p>Deseja receber informações sobre:</p></b>
+
+            <!-- ---------- CHECKBOX ----------
+                 pode marcar VÁRIOS. Todos com name="interesses"
+                 -> envia interesses=tecnologia&interesses=esportes... -->
 
             <input type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
             <label for="tecnologia">tecnologia</label>
@@ -139,51 +190,55 @@
             <input type="checkbox" id="automoveis" name="interesses" value="automoveis">
             <label for="automoveis">automoveis</label>
 
-
             <input type="checkbox" id="culinaria" name="interesses" value="culinaria">
             <label for="culinaria">Culinária</label>
-           
 
             <input type="checkbox" id="politica" name="interesses" value="politica">
             <label for="politica">Política</label>
-          
 
             <input type="checkbox" id="tempo" name="interesses" value="tempo">
             <label for="tempo">Tempo</label>
+
             <br>
 
             <input type="checkbox" id="cultura" name="interesses" value="cultura">
             <label for="cultura">Cultura</label>
-            
 
             <input type="checkbox" id="economia" name="interesses" value="economia">
             <label for="economia">Economia</label>
-           
+
             <input type="checkbox" id="jogos" name="interesses" value="jogos">
             <label for="jogos">Jogos</label>
-        
 
             <input type="checkbox" id="educacao" name="interesses" value="educacao">
             <label for="educacao">Educação</label>
-         
 
             <input type="checkbox" id="viagem" name="interesses" value="viagem">
             <label for="viagem">Viagem</label>
-       
+
             <input type="checkbox" id="empregos" name="interesses" value="empregos">
             <label for="empregos">Empregos</label>
-           
 
             <input type="checkbox" id="modaEstilo" name="interesses" value="moda/estilo">
             <label for="modaEstilo">Moda/Estilo</label>
+
             <br>
 
+            <!-- checkbox com required = OBRIGATÓRIO marcar para conseguir enviar (termo de aceite) -->
             <input type="checkbox" id="aceiteRegras" name="aceiteRegras" required>
             <label for="aceiteRegras">Li as regras de cadasdtro e aceito a criaçãp de usuário</label>
+
             <br>
-    </fieldset>
-    <input type="submit" value="Cadastrar"> <!--botão de envio-->
-    <input type="reset" value="Limpar"> <!--botão de limpar-->
+
+        </fieldset>
+
+
+        <!-- ---------- BOTÕES ---------- -->
+        <input type="submit" value="Cadastrar"> <!-- envia -->
+        <input type="reset" value="Limpar">     <!-- limpa -->
+
     </form>
+
 </body>
+
 </html>

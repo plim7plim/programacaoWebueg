@@ -1,26 +1,32 @@
+/* Comentário em CSS: só existe esse formato, barra-asterisco ... asterisco-barra */
+/* Este é um CSS EXTERNO: ligado ao HTML por <link rel="stylesheet" href="style.css"> */
+/* Estrutura: seletor { propriedade: valor; } */
+
+/* Seletor de ELEMENTO: estiliza o <body> (os filhos herdam fonte e alinhamento) */
 body {
-    font-family: Arial;
-    background: rgb(200, 147, 230);
-    text-align: center;
+    font-family: Arial; /* fonte do texto */
+    background: rgb(200, 147, 230); /* cor de fundo em RGB (vermelho, verde, azul de 0 a 255) -> lilás */
+    text-align: center; /* centraliza o texto */
 }
 
 h1 {
-    color: rgba(95, 111, 203, 0.883);
+    color: rgba(95, 111, 203, 0.883); /* rgba = rgb + A (alfa = opacidade, de 0 transparente a 1 opaco) */
 }
 
 table {
-    border-collapse: collapse;
-    margin: 20px auto;
+    border-collapse: collapse; /* junta as bordas das células (sem borda dupla) */
+    margin: 20px auto; /* 20px em cima/embaixo e AUTO nas laterais = CENTRALIZA a tabela */
 }
 
+/* Vírgula = mesma regra para th E td */
 th, td {
-    padding: 10px;
+    padding: 10px; /* espaço INTERNO de 10px em todos os lados */
 }
 
 button {
-    background: rgb(191, 0, 255);
-    color: white;
-    border-radius: 8px;
-    padding: 8px 15px;
-    border: none;
+    background: rgb(191, 0, 255); /* fundo roxo */
+    color: white; /* texto branco */
+    border-radius: 8px; /* arredonda os cantos */
+    padding: 8px 15px; /* 8px em cima/embaixo, 15px nas laterais */
+    border: none; /* remove a borda padrão do botão */
 }

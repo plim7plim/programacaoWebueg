@@ -1,81 +1,144 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz; o ideal seria lang="pt-br" -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+    <title>Document</title> <!-- título da aba -->
 </head>
+
 <body>
-    <form action="codigo.js" method="post"> <!--tag de formulário--> <!--action -> manda alguem tratar--> <!--method = como serão enviados-->
-       
+
+    <!-- ============================================================
+         FORMULÁRIO
+         <form>  = agrupa os campos que o usuário preenche e ENVIA
+         action  = PARA ONDE os dados vão (quem vai tratar; ex.: "salvar.php")
+         method  = COMO vão:
+                   "get"  -> dados aparecem na URL
+                   "post" -> dados vão escondidos no corpo da requisição
+         ============================================================ -->
+    <form action="codigo.js" method="post">
+
+
+        <!-- ======================= FIELDSET 1: DADOS PESSOAIS ======================= -->
+        <!-- <fieldset> = CAIXA com borda que agrupa campos relacionados -->
+        <!-- style = CSS inline (cor da borda preta) -->
         <fieldset style="border-color: black;">
+
+            <!-- <legend> = TÍTULO do fieldset (aparece em cima da borda) -->
             <legend>Dados pessoais</legend>
-            <label for="nome"> <!--ID/ligação -->
-                    Nome Completo
-            </label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" minlength="4" maxlength="50" required> <!--placeholder = dica para o usuário--> <!--minlength = tamanho mínimo--> <!--maxlength = tamanho máximo--> <!--required = obrigatório-->
-            <br> <br>
-            <label for="email">
-                    E-mail
-            </label>
+
+            <!-- <label> = rótulo do campo.
+                 for="nome" liga ao input com id="nome" (clicar no texto foca o campo) -->
+            <label for="nome">Nome Completo</label>
+
+            <!-- <input> = campo de entrada (tag vazia)
+                 type="text"  = texto livre
+                 id           = liga com o label
+                 name         = NOME do dado enviado ao servidor
+                 placeholder  = dica cinza dentro do campo
+                 minlength    = tamanho mínimo
+                 maxlength    = tamanho máximo
+                 required     = obrigatório -->
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" minlength="4" maxlength="50" required>
+
+            <br><br> <!-- 2 quebras de linha = espaço entre os campos -->
+
+            <label for="email">E-mail</label>
+            <!-- type="email" = o navegador valida se tem @ -->
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            <br> <br>
-            <label for="data">
-                    Data de Nascimento
-            </label>
+
+            <br><br>
+
+            <label for="data">Data de Nascimento</label>
+            <!-- type="date" = abre um calendário -->
             <input type="date" id="data" name="data" required>
-            <br> <br>
+
+            <br><br>
+
         </fieldset>
 
+
+        <!-- ======================= FIELDSET 2: ENDEREÇOS ======================= -->
         <fieldset style="border-color: black;">
-             <legend>Endereços</legend>
-                <label for="UF">UF</label>
-                <select name="" id="uf">
-                    <option value="" selected disabled></option> 
-                    <option value="">Goiás</option>
-                    <option value="">Goiania</option>
-                </select>
-                <label for="cep">
-                CEP
-                </label> 
-                <input type="number" id="cep" name="cep" placeholder="Digite seu CEP" pattern="[0-9]{5}-[0-9]{3}" maxlength="8" required> <!--pattern = expressão regular para validar o campo-->
-                <br> <br>
-                <label for="senha">
-                    Senha
-                </label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" minlength="6" maxlength="20" required>
-                <br> <br>
 
-                <label for="telefone">
-                    Telefone
-                </label>
-                <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
-                <br> <br>
+            <legend>Endereços</legend>
 
-                 <label for="senha">
-                    Senha
-                </label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" minlength="6" maxlength="20" required>
-                <br> <br>
+            <!-- atenção: for="UF" mas o id do select é "uf" (maiúscula/minúscula diferente -> NÃO liga) -->
+            <label for="UF">UF</label>
+
+            <!-- <select> = caixa de SELEÇÃO (lista suspensa / dropdown)
+                 name vazio = esse dado não seria enviado -->
+            <select name="" id="uf">
+                <!-- <option> = cada opção
+                     selected = já vem marcada | disabled = não pode ser escolhida
+                     -> funciona como um "vazio" inicial -->
+                <option value="" selected disabled></option>
+
+                <!-- value = o que é ENVIADO; o texto entre as tags é o que APARECE -->
+                <option value="">Goiás</option>
+                <option value="">Goiania</option>
+            </select>
+
+            <label for="cep">CEP</label>
+            <!-- type="number" = só números (com setinhas)
+                 pattern = expressão regular: [0-9]{5}-[0-9]{3} = 5 dígitos, hífen, 3 dígitos (76450-000)
+                 obs.: pattern e maxlength NÃO funcionam em type="number"; para CEP o certo é type="text" -->
+            <input type="number" id="cep" name="cep" placeholder="Digite seu CEP" pattern="[0-9]{5}-[0-9]{3}" maxlength="8" required>
+
+            <br><br>
+
+            <label for="senha">Senha</label>
+            <!-- type="password" = esconde o texto com ●●● -->
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" minlength="6" maxlength="20" required>
+
+            <br><br>
+
+            <label for="telefone">Telefone</label>
+            <!-- type="tel" = telefone (no celular abre teclado numérico) -->
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+
+            <br><br>
+
+            <!-- campo de senha REPETIDO com o mesmo id="senha"
+                 (id não pode repetir; o correto seria outro id, ex.: "confirmaSenha") -->
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" minlength="6" maxlength="20" required>
+
+            <br><br>
+
         </fieldset>
-      
 
+
+        <!-- ======================= FIELDSET 3: ALGUMA COISA ======================= -->
         <fieldset style="border-color: black;">
-             <legend>Alguma coisa</legend>
-            <label for="url">
-                URL
-            </label>
+
+            <legend>Alguma coisa</legend>
+
+            <label for="url">URL</label>
+            <!-- type="url" = valida se é um endereço (precisa de http:// ou https://) -->
             <input type="url" id="url" name="faco" placeholder="Digite a URL" required>
 
-            <p>Sexo: </p>
-            <input type="radio" id="faco" name="faco" value="faco" > 
+
+            <!-- ---------- RADIO ----------
+                 type="radio" = botão de opção: marca só UM do grupo
+                 radios com o MESMO name formam um grupo (marcar um desmarca o outro)
+                 value = valor enviado se esse for o marcado -->
+            <p>Sexo:</p>
+
+            <input type="radio" id="faco" name="faco" value="faco">
             <label for="faco">faço</label>
 
-            <input type="radio" id="Nfaco" name="faco" value="Nfaco" > 
-            <label for="Nfaco">não faço</label> <!--name faz as labels serem do mesmo grupo-->
+            <input type="radio" id="Nfaco" name="faco" value="Nfaco">
+            <label for="Nfaco">não faço</label>
 
-            <br> <br>
+            <br><br>
 
+
+            <!-- ---------- CHECKBOX ----------
+                 type="checkbox" = caixa de marcação: pode marcar VÁRIAS -->
             <p>Assuntos de interesses:</p>
 
             <input type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
@@ -91,28 +154,52 @@
             <br>
 
 
+            <!-- ---------- SELECT ----------
+                 sem selected: a 1ª opção já vem marcada -->
             <label for="estadoCivil">Estado Civil</label>
-            <select id="estadoCivil" name="estadoCivil"> <!--Caixinha de seleção-->
+
+            <select id="estadoCivil" name="estadoCivil">
                 <option value="solteiro">Solteiro</option>
                 <option value="casado">Casado</option>
                 <option value="divorciado">Divorciado</option>
                 <option value="viuvo">Viuvo</option>
             </select>
-            <br> <br>
-            <br> <br>
-            <input type="submit" value="Enviar"> <!--botão de envio-->
-            <input type="reset" value="Limpar"> <!--botão de limpar-->
-            <br> <br>
-            <button type="submit">Enviar</button> 
 
-        </fieldset> 
-<br>
-        <fieldset style="border-color: blueviolet;">
-        <label for="observacao">Observaçoes</label>
-        <textarea name="observacoes" id="observacoes" rows="5" cols="40"></textarea> <!--Limitações de linhas e colunas-->
+            <br><br>
+            <br><br>
+
+
+            <!-- ---------- BOTÕES ---------- -->
+            <!-- submit = envia o form para o action. value = texto do botão -->
+            <input type="submit" value="Enviar">
+
+            <!-- reset = volta todos os campos ao valor inicial -->
+            <input type="reset" value="Limpar">
+
+            <br><br>
+
+            <!-- <button> faz o mesmo que input submit, mas o texto fica ENTRE as tags -->
+            <button type="submit">Enviar</button>
+
         </fieldset>
-    </form>
-    
-</body>
-</html>
 
+        <br>
+
+
+        <!-- ======================= FIELDSET 4: OBSERVAÇÕES ======================= -->
+        <fieldset style="border-color: blueviolet;"> <!-- borda roxa -->
+
+            <!-- for="observacao" não bate com id="observacoes" (falta o "s") -->
+            <label for="observacao">Observaçoes</label>
+
+            <!-- <textarea> = texto de VÁRIAS linhas (tem fechamento </textarea>)
+                 rows = altura em linhas | cols = largura em caracteres -->
+            <textarea name="observacoes" id="observacoes" rows="5" cols="40"></textarea>
+
+        </fieldset>
+
+    </form> <!-- fecha o formulário -->
+
+</body>
+
+</html>

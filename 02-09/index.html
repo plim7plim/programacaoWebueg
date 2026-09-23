@@ -1,43 +1,85 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz da página. lang = idioma (o ideal seria "pt-br") -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<head> <!-- HEAD: configurações (não aparece na tela) -->
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+    <title>Document</title> <!-- título da aba -->
 </head>
-<body>
-   <!-- div é agrupamento de elementos, não tem significado semântico, é apenas um container
-    span é um trecho de contéudo -->
 
-    <div id="completa"> <!--id pra identificar o elemento -->
-        <h2> Oi</h2>
-        <p>To com muita fome meu santo deus</p>
-        <img src="image.png"> 
-        <p> Hamburger muito gosto <span style="color: red;">ComMUITOOOOOOOOOOOOOO CHEDDAR</span></p> <!--Span permite alterar certas partes do texto  -->
-        <p> Hamburger muito gosto <span style="color: rgb(68, 224, 21);">ComMUITOOOOOOOOOOOOOO Hamburber</span></p> <!--Span permite alterar certas partes do texto  -->
-        <p> Hamburger muito gosto <span style="color: rgb(0, 60, 255);">ComMUITOOOOOOOOOOOOOO salsicha</span></p> <!--Span permite alterar certas partes do texto  -->
+<body> <!-- BODY: conteúdo visível -->
 
-        <ul>
+    <!-- ============================================================
+         DIV e SPAN
+         <div>  = container de BLOCO, sem significado semântico
+                  (ocupa a linha inteira, quebra linha antes e depois)
+         <span> = trecho de conteúdo INLINE (fica no meio do texto, não quebra linha)
+         ============================================================ -->
+
+
+    <!-- ============================== DIV 1 ============================== -->
+    <!-- id identifica o elemento. É ÚNICO na página; no CSS usa-se #completa -->
+    <div id="completa">
+
+        <h2>Oi</h2> <!-- subtítulo -->
+
+        <p>To com muita fome meu santo deus</p> <!-- parágrafo -->
+
+        <!-- <img> = imagem; src = arquivo na mesma pasta. Tag vazia. Faltou o alt="" (acessibilidade) -->
+        <img src="image.png">
+
+        <!-- style="" = CSS INLINE (direto no elemento). O span permite mudar só PARTE do texto -->
+        <p>Hamburger muito gosto <span style="color: red;">ComMUITOOOOOOOOOOOOOO CHEDDAR</span></p>              <!-- cor pelo nome -->
+        <p>Hamburger muito gosto <span style="color: rgb(68, 224, 21);">ComMUITOOOOOOOOOOOOOO Hamburber</span></p> <!-- rgb -> verde -->
+        <p>Hamburger muito gosto <span style="color: rgb(0, 60, 255);">ComMUITOOOOOOOOOOOOOO salsicha</span></p>   <!-- rgb -> azul -->
+
+        <ul> <!-- lista NÃO ordenada -->
             <li>X tudo</li>
             <li>X bacon</li>
             <li>X simples</li>
         </ul>
+
+        <!-- <a> = link; href = endereço. Sem target, abre na MESMA aba -->
         <a href="https://www.instagram.com/pitdog.oficial/">Instagram</a>
-        <P>Amo pitdog q tem muita comuida, com muita coisa <b> batata, salsicha, carne, molho </b></P>
-    </div> 
 
-    <div id="outro"> <!--id pra identificar o elemento -->
-        <h2> Oi</h2>
+        <!-- HTML não diferencia maiúscula: <P> = <p>
+             <b> = negrito só visual (<strong> = negrito com IMPORTÂNCIA) -->
+        <P>Amo pitdog q tem muita comuida, com muita coisa <b>batata, salsicha, carne, molho</b></P>
+
+    </div> <!-- fecha a div 1 -->
+
+
+    <!-- ============================== DIV 2 ============================== -->
+    <div id="outro">
+
+        <h2>Oi</h2>
+
         <p>To com muita fome meu santo deus</p>
-        <img src="image.png"> <p> Hamburger muito gosto <span>ComMUITOOOOOOOOOOOOOO CHEDDAR</span></p> <!--Span permite alterar certas partes do texto  -->
-    </div> 
+
+        <img src="image.png">
+
+        <!-- span sem style: não muda nada visualmente -->
+        <p>Hamburger muito gosto <span>ComMUITOOOOOOOOOOOOOO CHEDDAR</span></p>
+
+    </div>
 
 
-    <div id="maisUma"> <!--id pra identificar o elemento -->
-        <h2> Oi</h2>
+    <!-- ============================== DIV 3 ============================== -->
+    <!-- cada div tem um id diferente -->
+    <div id="maisUma">
+
+        <h2>Oi</h2>
+
         <p>To com muita fome meu santo deus</p>
-        <img src="image.png"> <p> Hamburger muito gosto <span>ComMUITOOOOOOOOOOOOOO CHEDDAR</span></p> <!--Span permite alterar certas partes do texto  -->
-    </div> 
+
+        <img src="image.png">
+
+        <p>Hamburger muito gosto <span>ComMUITOOOOOOOOOOOOOO CHEDDAR</span></p>
+
+    </div>
 
 </body>
+
 </html>

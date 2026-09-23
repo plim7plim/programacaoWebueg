@@ -1,49 +1,95 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz; o ideal seria lang="pt-br" -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info Faculdades</title>
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+    <title>Info Faculdades</title> <!-- título da aba -->
+
+    <!-- liga CSS externo. "./" = pasta atual (esse arquivo não existe nesta pasta) -->
     <link rel="stylesheet" href="./style.css">
+
+    <!-- script externo. defer = baixa junto, mas só EXECUTA depois que o HTML todo carregou
+         (por isso pode ficar no head). (esse arquivo também não existe) -->
     <script src="./script/main.js" defer></script>
 </head>
+
 <body>
+
+    <!-- <header> = CABEÇALHO visível da página (semântico) -->
     <header>
         <h1>Universidade e Cursos de Goiás</h1>
         <p>Conheça algumas das principais instituições de ensino superior presentes no estado de Goiás.</p>
-        <hr>
+        <hr> <!-- <hr> = linha horizontal separadora (tag vazia) -->
     </header>
 
+
+    <!-- <main> = CONTEÚDO PRINCIPAL (só 1 por página) -->
     <main>
-        <section>
+
+        <!-- ============================== UEG ============================== -->
+        <section> <!-- SEÇÃO de um assunto -->
             <h2>Universidade Estadual de Goiás - UEG</h2>
+
+            <!-- imagem DENTRO de um <a> = a imagem vira um LINK clicável (faltou o alt) -->
             <a href="https://www.ueg.br/"><img src="./ueg.png"></a>
+
             <p>A Universidade Estadual de Goiás é uma instituição pública de ensino superior presente em diferentes...</p>
+
+            <!-- link de texto (sem target: abre na mesma aba) -->
             <a href="https://www.ueg.br/">Acessar o site da UEG</a>
         </section>
 
+
+        <!-- ============================== UFG ============================== -->
         <section>
             <h2>Universidade Federal de Goiás - UFG</h2>
-            <a href="https://ufg.br/"><img src="./ufg.png"></a>
+
+            <a href="https://ufg.br/"><img src="./ufg.png"></a> <!-- imagem-link -->
+
             <p>A Universidade Federal de Goiás é uma instituição pública de ensino superior presente em diferentes...</p>
+
             <a href="https://ufg.br/">Acessar o site da UFG</a>
         </section>
 
+
+        <!-- ============================== PUC ============================== -->
         <section>
             <h2>Pontifícia Universidade Católica de Goiás - PUC Goiás</h2>
-            <a href="https://www.pucgoias.edu.br/"><img src="./puc.png"></a>
+
+            <a href="https://www.pucgoias.edu.br/"><img src="./puc.png"></a> <!-- imagem-link -->
+
             <p>A PUC Goiás é uma instituição de ensino superior localizada em Goiânia, oferecendo cursos em dive...</p>
+
             <a href="https://pucgoias.edu.br/">Acessar o site da PUC Goiás</a>
         </section>
 
+
+        <!-- ============================== VÍDEO ============================== -->
         <section>
             <h2>Vídeo sobre a vida universitária</h2>
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/zQ1rQ46NDZM?si=umBK2EL1nfEFA71N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <!-- <iframe> = coloca OUTRA PÁGINA dentro desta (aqui, um vídeo do YouTube).
+                 Código pego em YouTube > Compartilhar > Incorporar.
+                 width / height   = tamanho
+                 src              = endereço do vídeo (link com /embed/)
+                 title            = descrição (acessibilidade)
+                 frameborder="0"  = sem borda
+                 allow            = permissões (autoplay, etc.)
+                 allowfullscreen  = permite tela cheia -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zQ1rQ46NDZM?si=umBK2EL1nfEFA71N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
+
     </main>
 
+
+    <!-- <footer> = RODAPÉ -->
     <footer>
         <p>Trabalho desenvolvido para a disciplina da UEG.</p>
     </footer>
+
 </body>
+
 </html>

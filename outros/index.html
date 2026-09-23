@@ -1,19 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz; o ideal seria lang="pt-br" -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+
+    <!-- <link> = liga um arquivo CSS EXTERNO à página (fica no head)
+         rel="stylesheet" = diz que é folha de estilo | href = caminho do arquivo -->
     <link rel="stylesheet" href="style.css">
-    <title>Mais outra paágina</title>
+
+    <title>Mais outra paágina</title> <!-- título da aba -->
 </head>
+
 <body>
 
-    <h1>Oiiiiii mundo novamente!</h1>
-    <p>Essa é uma das muitas páginas web</p>
-    <button onclick="saudacao()"> clica aqui!</button>
+    <h1>Oiiiiii mundo novamente!</h1> <!-- título (a cor vem do style.css) -->
+
+    <p>Essa é uma das muitas páginas web</p> <!-- parágrafo -->
+
+    <!-- onclick = EVENTO: ao clicar, executa a função saudacao() que está no script.js -->
+    <button onclick="saudacao()">clica aqui!</button>
 
 
-
+    <!-- <script src> = liga um arquivo JavaScript EXTERNO.
+         Fica no FINAL do body para o HTML carregar primeiro (a página aparece mais rápido) -->
     <script src="script.js"></script>
+
 </body>
-</html> 
+
+</html>

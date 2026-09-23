@@ -1,21 +1,42 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declara HTML5 -->
+
+<!-- Raiz; o ideal seria lang="pt-br" -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"> <!-- aceita acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsivo -->
+    <title>Document</title> <!-- título da aba -->
 </head>
+
 <body>
+
+    <!-- <form> = formulário. action="index.html" = ao enviar, vai para esta mesma página
+         sem method -> o padrão é GET (dados aparecem na URL: index.html?nome=...&cpf=...) -->
     <form action="index.html">
+
+        <!-- <fieldset> = caixa com borda agrupando os campos -->
         <fieldset>
-            <legend>Dados Pessoais</legend>
-            <label for="nome">Nome:</label> 
-            <input type="text" name="nome" id="nome" required><br><br>
+
+            <legend>Dados Pessoais</legend> <!-- título da caixa -->
+
+            <!-- for liga com o input de id="nome" -->
+            <label for="nome">Nome:</label>
+            <!-- campo de texto obrigatório (required). name = nome do dado enviado -->
+            <input type="text" name="nome" id="nome" required>
+
+            <br><br>
 
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf" required><br><br> 
-        </fieldset> <!--Cria uma caixinha -->
-        
+            <input type="text" name="cpf" id="cpf" required>
+
+            <br><br>
+
+        </fieldset>
+
+        <!-- não tem botão submit; dá pra enviar apertando Enter num campo -->
     </form>
+
 </body>
+
 </html>
