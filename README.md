@@ -46,5 +46,3 @@ Exercícios de aula de Programação Web (HTML, CSS e JavaScript), **todos comen
 ## Atenção
 
 Alguns arquivos têm **pequenos erros que foram mantidos como estavam** (por exemplo: `label` com `for` diferente do `id`, `id` repetido, CEP com `type="number"`). Eles estão **marcados nos comentários** e listados na seção *Erros comuns* do `tecnicas.txt`. Vale a pena ler, porque é o tipo de coisa que o professor cobra.
-
-Boa prova! 🍀
