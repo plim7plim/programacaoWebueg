@@ -1,0 +1,361 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f5fa;
+  color: #192f3c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  width: 84%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  background: #302747;
+  color: white;
+}
+
+.cabecalho {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marca strong {
+  font-size: 23px;
+}
+
+.marca small {
+  display: block;
+  margin-top: 6px;
+  color: #bfd5de;
+  font-size: 12px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 51px;
+  border-radius: 10px;
+  background: #d5c4f1;
+  color: #193643;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 27px;
+}
+
+nav a {
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.apresentacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 32px 0 33px;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #e9e0f5;
+  color: #644486;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 13px 0 12px;
+}
+
+p {
+  color: #536977;
+  line-height: 1.5;
+}
+
+.apresentacao p {
+  margin: 0;
+}
+
+.encontro {
+  width: 282px;
+  flex-shrink: 0;
+  border-left: 5px solid #8160a4;
+  padding: 23px 22px;
+  background: #ece5f5;
+}
+
+.legenda {
+  color: #6c4c8c;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.encontro h2 {
+  font-size: 19px;
+  margin: 9px 0;
+}
+
+.encontro p {
+  font-size: 12px;
+  color: #253e49;
+}
+
+.encontro small {
+  display: block;
+  margin-top: 12px;
+  color: #536977;
+  font-size: 11px;
+}
+
+h2 {
+  font-size: 23px;
+  margin: 8px 0 0;
+}
+
+.titulo-servicos {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.titulo-servicos p {
+  margin: 0 0 2px;
+  font-size: 12px;
+}
+
+.servicos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.card {
+  min-height: 204px;
+  padding: 22px 20px 20px;
+  border: 1px solid;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.computador {
+  background: #eae0f7;
+  border-color: #d6c4eb;
+}
+
+.internet {
+  background: #e1eefb;
+  border-color: #c1d6ed;
+}
+
+.digital {
+  background: #fbe8db;
+  border-color: #ecd0bc;
+}
+
+.numero {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 19px;
+  margin: 14px 0 9px;
+}
+
+.card p {
+  font-size: 13px;
+  margin: 0 0 25px;
+}
+
+.categoria {
+  margin-top: auto;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid #89978f;
+  border-radius: 3px;
+}
+
+.inscricao {
+  margin-top: 24px;
+  padding: 23px;
+  border: 1px solid #dde3e4;
+  border-radius: 13px;
+  background: white;
+}
+
+.inscricao p {
+  margin: 6px 0 16px;
+  font-size: 12px;
+}
+
+.linha {
+  display: flex;
+  gap: 18px;
+}
+
+.campo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  height: 41px;
+  padding: 0 11px;
+  border: 1px solid #b9c7cb;
+  border-radius: 4px;
+  background: white;
+  color: #253744;
+  font: inherit;
+  font-size: 13px;
+}
+
+.escolha {
+  display: flex;
+  align-items: end;
+  gap: 17px;
+  margin-top: 13px;
+}
+
+.escolha .campo {
+  flex: 1;
+}
+
+button {
+  height: 41px;
+  padding: 0 27px;
+  border: 0;
+  border-radius: 5px;
+  background: #6d4a91;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: 90%;
+  }
+
+  .cabecalho {
+    padding: 18px 0;
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+
+  .marca strong {
+    font-size: 20px;
+  }
+
+  nav {
+    gap: 22px;
+  }
+
+  .apresentacao {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .quebra {
+    display: none;
+  }
+
+  .encontro {
+    width: 100%;
+  }
+
+  .titulo-servicos {
+    display: block;
+  }
+
+  .titulo-servicos p {
+    margin-top: 10px;
+  }
+
+  .servicos {
+    grid-template-columns: 1fr;
+  }
+
+  .linha {
+    flex-direction: column;
+  }
+
+  .escolha {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  footer p {
+    margin: 5px 0;
+  }
+
+
+}

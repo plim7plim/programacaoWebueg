@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conecta Bairro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container cabecalho">
+      <a class="marca" href="#">
+        <span class="logo">CB</span>
+        <span><strong>Conecta Bairro</strong><small>Tecnologia perto de você</small></span>
+      </a>
+      <nav aria-label="Menu principal">
+        <a href="#mutirao">O mutirão</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#inscricao">Inscrição</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="apresentacao" id="mutirao">
+      <div>
+        <span class="etiqueta">Atendimento gratuito</span>
+        <h1>Seu problema com tecnologia<br>tem solução aqui no bairro.</h1>
+        <p>Voluntários ajudam você a cuidar do computador, usar a internet<br class="quebra"> e ganhar confiança no mundo digital.</p>
+      </div>
+      <aside class="encontro">
+        <span class="legenda">Nosso próximo encontro</span>
+        <h2>Sábado, das 9h às 13h</h2>
+        <p>Centro Comunitário do Bairro</p>
+        <small>Leve seu aparelho e o carregador.</small>
+      </aside>
+    </section>
+
+    <section id="servicos">
+      <div class="titulo-servicos">
+        <div><span class="legenda">Como podemos ajudar</span><h2>Escolha o seu atendimento</h2></div>
+        <p>Três serviços. Um bairro mais conectado.</p>
+      </div>
+      <div class="servicos">
+        <article class="card computador">
+          <span class="numero">01</span>
+          <h3>Computador em dia</h3>
+          <p>Seu computador está lento? Receba uma avaliação e orientações de cuidado.</p>
+          <span class="categoria">Computadores e notebooks</span>
+        </article>
+        <article class="card internet">
+          <span class="numero">02</span>
+          <h3>Internet sem complicação</h3>
+          <p>Aprenda a conectar seus aparelhos e a melhorar o uso do Wi-Fi em casa.</p>
+          <span class="categoria">Conexão e Wi-Fi</span>
+        </article>
+        <article class="card digital">
+          <span class="numero">03</span>
+          <h3>Primeiros passos digitais</h3>
+          <p>Tire dúvidas sobre email, chamadas de vídeo e cuidados com mensagens suspeitas.</p>
+          <span class="categoria">Celular e aplicativos</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="inscricao" id="inscricao">
+      <span class="legenda">Participe do mutirão</span>
+      <h2>Qual ajuda você precisa?</h2>
+      <p>Preencha seus dados e escolha um serviço.</p>
+      <form>
+        <div class="linha">
+          <div class="campo"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" placeholder="Digite seu nome"></div>
+          <div class="campo"><label for="email">Seu email</label><input id="email" name="email" type="email" placeholder="voce@exemplo.com"></div>
+        </div>
+        <div class="escolha">
+          <div class="campo">
+            <label for="servico">Serviço de interesse</label>
+            <select id="servico">
+              <option value="">Selecione um atendimento</option>
+              <option>Computador em dia</option>
+              <option>Internet sem complicação</option>
+              <option>Primeiros passos digitais</option>
+            </select>
+          </div>
+          <button type="button">Quero participar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p><strong>Conecta Bairro</strong> · Conhecimento que aproxima.</p>
+    <p>Projeto fictício para atividade em sala de aula.</p>
+  </footer>
+</body>
+</html>
+
