@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cone</title>
+</head>
+<body>
+    <h1>Raio Cone</h1>
+    
+    <div class="caixa">
+
+        <label for="raio">Raio do cone:</label>
+        <input type="number" id="raio" name="raio">
+        <br>
+
+        <label for="altura">Altura do cone:</label>
+        <input type="number" id="altura" name="altura">
+
+        <button type="button" onclick="calcularCone()">Calcule</button>
+    </div>
+
+
+    <div class="caixa" id="resultado">
+        <p>Tipo da Figura: <span id="tipo"></span></p>
+        <p>Geratriz: <span id="geratriz"></span></p>
+        <p>Área Lateral: <span id="areaLateral"></span></p>
+        <p>Área Total: <span id="areaTotal"></span></p>
+        <p>Volume: <span id="volume"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
