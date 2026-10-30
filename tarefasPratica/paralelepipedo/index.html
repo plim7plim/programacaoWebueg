@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paralelelleel</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Paralelepípedo</h1>
+
+    <div class="caixa">
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura">
+        <br>
+        <label for="largura">Largura:</label>
+        <input type="number" id="largura">
+        <br>
+        <label for="comprimento">Comprimento:</label>
+        <input type="number" id="comprimento">
+        <br>
+        <button type="button" onclick="calcularParalelepipedo()">Calcular</button>
+    </div>
+
+    <div class="caixa" id="resultado">
+        <p>tipo de figura: <span id="tipo"></span></p>
+        <p>Area total: <span id="areaTotal"></span></p>
+        <p>Volume: <span id="volume"></span></p>
+        <p>Diagonal do paralelepípedo: <span id="diagonal"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

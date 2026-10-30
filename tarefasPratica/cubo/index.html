@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <h1>Calculadora de cubo </h1>
+    
+    <div class="caixa">
+        <label for="arestas">Aresta do cubo </label>
+        <input type="number" id="arestas">
+        
+        <button type="button" onclick="calcularCubo()">Calcular</button>
+    </div>
+
+    <div class="caixa" id="resultado">
+        <p>Tipo de figura: <span id="tipo"></span> </p>
+        <p>area da face: <span id="areaFace"></span> </p>
+        <p>area lateral: <span id="areaLateral"></span> </p>
+        <P>area total: <span id = "areaTotal"></span></P>
+        <p>Volume: <span id="volume"></span> </p>  
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
