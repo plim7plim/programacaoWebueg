@@ -1,0 +1,41 @@
+body{
+    font-family: Arial, sans-serif;   
+    background-color: #bae9c09c;
+    max-width: 420px; 
+    margin: 30px auto;                            
+}
+
+h1{
+    text-align: center;
+    color: #210864;
+
+}   
+
+span{
+    font-weight: bold;
+    color: #1a3d6d;
+}
+
+.caixa{
+    background-color: #c7b8f1;
+    border: 1px solid #fff4f4;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    
+    
+}
+
+button{
+    display: flex;
+    padding: 6px 14px;
+    background-color: #41cbee;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #f700ff;
+}
